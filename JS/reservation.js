@@ -1,5 +1,3 @@
-
-
 function getName() {
   const guestName = document.getElementById('inputName').value;
   if(guestName.length == 0){
@@ -39,7 +37,15 @@ function getPhone() {
 function dateCheck(){
   const startDate = document.getElementById('from').value;
   const endDate = document.getElementById('to').value;
-  if(startDate.length == 0 || endDate.length == 0){
+  const startTimeCheck = new Date(startDate) - new Date();
+  const endTimeCheck = new Date(endDate) - new Date(startDate);
+  if(startTimeCheck < 0 || endTimeCheck <= 0 ){
+    var errorDate = document.getElementById('errorDate');
+    errorDate.innerHTML=`
+    <p>Please choose the valid dates</p>
+    `;
+    return false;
+  }else if(startDate.length == 0 || endDate.length == 0){
     var errorDate = document.getElementById('errorDate');
     errorDate.innerHTML=`
     <p>Please choose the dates</p>
@@ -88,14 +94,16 @@ $( function() {
       const startTimestamp = Math.ceil((new Date(startDate) - new Date(currentYear)) / 86400000);
       const endTimestamp = Math.ceil((new Date(endDate) - new Date(currentYear)) / 86400000);
       let hasDays = endTimestamp - startTimestamp;
-      let days = (isNaN(hasDays)) ? 0 : hasDays ;
+      let days = (isNaN(hasDays) || hasDays < 0) ? 0 : hasDays ;
       const roomPrice = document.getElementById('setRoomPrice').value;
       const totalPrice = roomPrice * days;
       var priceCount = document.getElementById('priceCount');
       priceCount.innerHTML=`
       <div id="totalPrice" class="h5">$${roomPrice} AUD x ${days} night(s) = $${totalPrice} AUD</div>
       `;
+
       return date;
     }
+    }
 
-  } );
+   );

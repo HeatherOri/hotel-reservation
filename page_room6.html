@@ -36,7 +36,7 @@
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-    <script src="reservation.js"></script>
+    <script src="JS/reservation.js"></script>
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog model-xl modal-dialog-centered">
       <div class="modal-content">
@@ -114,7 +114,7 @@
         <h4 id="roomPrice">$399 AUD</h4><p>per night</p>
         <input id= "setRoomPrice" type="number" name="" value="399">
       </div>
-      <form id="guestForm" action="page_bookingCompleted.html" onsubmit="return(getName() && getPhone() && dateCheck())" method="post">
+      <form id="guestForm" action="page_booking_completed.html" onsubmit="return(getName() && getPhone() && dateCheck())" method="get">
         <div>
           <label>Name:</label>
           <input id="inputName" type="text" name="guestName" onblur="getName()">
