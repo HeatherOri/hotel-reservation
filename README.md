@@ -1,4 +1,6 @@
-<a href="https://heatherori.github.io/hotel-reservation/"><img src="https://heatherori.github.io/portfolio/image/hotel_reservation_main.jpg" alt="hotel"></a>
+<a href="https://heatherori.github.io/hotel-reservation/" target="_blank">
+<img src="https://heatherori.github.io/portfolio/image/hotel_reservation_main.jpg" alt="hotel">
+</a>
 <h3>White Space</h3>
           <p>
             White Space is a hotel website that I practiced to making, which
